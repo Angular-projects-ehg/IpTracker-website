@@ -1,4 +1,5 @@
 export interface IPData {
+
   ip: string;
   location: Location;
   domains: string[];
@@ -21,4 +22,5 @@ export interface Location {
   timezone: string;
   lat: number;
   lng: number;
+  city:string;
 }

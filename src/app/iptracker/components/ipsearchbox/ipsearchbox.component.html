@@ -1,4 +1,4 @@
-<div class="container flex column justify-content-center mt-5">
+<div class="flex column justify-content-center mt-5">
   <div class="iptrackerbox flex flex-column align-items-center">
     <form class="ip-form flex" (submit)="FormSubmit($event)">
       <mat-form-field class="ip-form">
@@ -10,7 +10,14 @@
       </button>
     </form>
 
-    Your ip address:
-    ipaddress
+    <div class="text-center">
+      <p class="font-bold text-xl">Your IP Address:</p>
+      <p class="text-lg">{{ipdata.ip}}</p>
+    </div>
+    <hr class="w-full border-t border-gray-300 my-4">
+    <div class="text-center">
+      <p class="font-bold text-xl">Country:</p>
+      <p class="text-lg">{{ipdata.location.country}}</p>
+    </div>
   </div>
 </div>

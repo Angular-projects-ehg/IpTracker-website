@@ -1,7 +1,4 @@
-.container {
-    
-    
-}
+
 
 .iptrackerbox {
     border: 2px solid lightgray; /* Light gray border */
@@ -20,9 +17,9 @@
 }
 
 .no-border {
-    border: none !important; 
-    box-shadow: none !important; 
-    border-radius: 0 !important; 
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
     border-top-right-radius: 5px !important;
     border-bottom-right-radius: 5px !important;
     background-color: #023f7c;

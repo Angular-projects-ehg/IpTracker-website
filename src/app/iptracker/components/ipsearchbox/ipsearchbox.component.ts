@@ -20,7 +20,7 @@ import { IPData } from '../../interfaces/ipdata.interfaces';
   templateUrl: './ipsearchbox.component.html',
   styleUrl: './ipsearchbox.component.css',
 })
-export class IpsearchboxComponent implements OnInit {
+export class IpsearchboxComponent {
   @ViewChild('ipValueInput')
   public searchIp!: ElementRef<HTMLInputElement>;
 
@@ -33,6 +33,7 @@ export class IpsearchboxComponent implements OnInit {
       timezone: '',
       lng: 0,
       lat: 0,
+      city:''
     },
     domains: [],
     as: {
@@ -47,14 +48,14 @@ export class IpsearchboxComponent implements OnInit {
 
   constructor(private ipservice: TrackIpService) {}
 
-  ngOnInit(): void {
-    this.ipservice.getMyIpAndSearch().subscribe((data: IPData) => {
-      this.ipdata = data;
-      if (this.searchIp) {
-        this.searchIp.nativeElement.value = this.ipdata.ip;
-      }
-    });
-  }
+  // ngOnInit(): void {
+  //   this.ipservice.getMyIpAndSearch().subscribe((data: IPData) => {
+  //     this.ipdata = data;
+  //     if (this.searchIp) {
+  //       this.searchIp.nativeElement.value = this.ipdata.ip;
+  //     }
+  //   });
+  // }
 
   FormSubmit(e: Event): void {
     e.preventDefault();
@@ -62,11 +63,7 @@ export class IpsearchboxComponent implements OnInit {
     const IP = this.searchIp.nativeElement.value;
 
     this.ipservice.searchIp(IP).subscribe((data) => {
-      console.log(data);
       this.ipdata = data;
     });
-
-    console.log('Searching IP: ' + IP);
-    console.log('Searching IP: ' + this.ipdata);
   }
 }
