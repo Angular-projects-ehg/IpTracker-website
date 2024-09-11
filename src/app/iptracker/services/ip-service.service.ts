@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, delay, switchMap, tap } from 'rxjs/operators';
 import { IPData } from '../interfaces/ipdata.interfaces';
+import * as L from 'leaflet';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TrackIpService {
   public isLoading: boolean = false;
+  private map: L.Map | null = null;
   public ipData: IPData = {
     ip: '',
     location: {
@@ -53,6 +55,7 @@ export class TrackIpService {
       // delay(1000),
       tap((resp) => {
         this.ipData = resp;
+        this.initMap();
         console.log(this.ipData)
         this.isLoading = false;
       }),
@@ -62,6 +65,34 @@ export class TrackIpService {
         return of(this.ipData);
       })
     );
+  }
+
+  private initMap(): void {
+    if (this.map) {
+      this.map.off();
+      this.map.remove();
+    }
+
+    this.map = L.map('map', {
+      center: [this.ipData.location.lat, this.ipData.location.lng],
+      zoom: 13,
+      zoomControl: false,
+      attributionControl: false,
+    });
+
+    const tiles = L.tileLayer(
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      {
+        attribution: '© OpenStreetMap',
+      }
+    );
+    tiles.addTo(this.map);
+
+    const marker = L.marker([
+      this.ipData.location.lat,
+      this.ipData.location.lng,
+    ]);
+    marker.addTo(this.map);
   }
 
 
