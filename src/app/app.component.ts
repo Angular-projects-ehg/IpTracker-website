@@ -4,6 +4,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { IpsearchboxComponent } from './iptracker/components/ipsearchbox/ipsearchbox.component';
 import { IpInformationComponent } from './iptracker/components/ip-information/ip-information.component';
 import { CountryinformationComponent } from './iptracker/components/countryinformation/countryinformation.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { CountryinformationComponent } from './iptracker/components/countryinfor
   imports: [
     RouterOutlet,
     NavbarComponent,
+    FooterComponent,
     IpsearchboxComponent,
     IpInformationComponent,
     CountryinformationComponent,
