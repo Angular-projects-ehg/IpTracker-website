@@ -1,0 +1,102 @@
+/* Container and Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* About Content Section */
+.about-content {
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #4a5568;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+/* Cards for Features */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: #f7fafc;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #2b6cb0;
+  margin-bottom: 1rem;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+/* Mission Section */
+.mission {
+  padding: 3rem;
+  background-color: #2d3748;
+  color: white;
+}
+
+.mission .section-description {
+  font-size: 1.2rem;
+  color: #4a5568;
+}
+
+/* Contact Section */
+.btn-primary {
+  background-color: #3182ce;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2b6cb0;
+}
