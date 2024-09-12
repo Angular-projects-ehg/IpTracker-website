@@ -21,10 +21,11 @@ export class CountryinformationComponent implements OnInit {
     return this.countryService.countryData;
   }
 
+
   // Fetch country data on initialization
   ngOnInit(): void {
     setTimeout(() => {
-      this.countryService.getCountryByCode().subscribe({
+      this.countryService.getCountryByCode('').subscribe({
         next: (countries: Country[]) => {
           console.log('Datos del país cargados:', countries);
         },

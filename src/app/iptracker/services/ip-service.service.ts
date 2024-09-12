@@ -1,8 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, delay, switchMap, tap } from 'rxjs/operators';
+import { catchError, switchMap, tap } from 'rxjs/operators';
 import { IPData } from '../interfaces/ipdata.interfaces';
+import { CountrysearchService } from './countrysearch.service';  // Import the service
 import * as L from 'leaflet';
 
 @Injectable({
@@ -20,7 +21,7 @@ export class TrackIpService {
       timezone: '',
       lng: 0,
       lat: 0,
-      city:''
+      city: ''
     },
     domains: [],
     as: {
@@ -37,8 +38,7 @@ export class TrackIpService {
   private API_URL: string = 'https://geo.ipify.org/api/v2/country,city';
   private GET_IP_URL: string = 'https://api.ipify.org?format=json';
 
-  constructor(private http: HttpClient) {}
-
+  constructor(private http: HttpClient, private countryService: CountrysearchService) {}
 
   public searchIp(ip: string): Observable<IPData> {
     this.isLoading = true;
@@ -52,12 +52,22 @@ export class TrackIpService {
       .set('ipAddress', ip);
 
     return this.http.get<IPData>(this.API_URL, { params }).pipe(
-      // delay(1000),
       tap((resp) => {
         this.ipData = resp;
         this.initMap();
-        console.log(this.ipData)
+        console.log(this.ipData);
         this.isLoading = false;
+
+        // Call getCountryByCode after updating ipData
+        const countryCode = this.ipData.location.country;
+        this.countryService.getCountryByCode(countryCode).subscribe(
+          (countries) => {
+            console.log('Country data updated:', countries);
+          },
+          (error) => {
+            console.error('Error fetching country data:', error);
+          }
+        );
       }),
       catchError((error) => {
         console.error('Error fetching IP data:', error);
@@ -94,7 +104,6 @@ export class TrackIpService {
     ]);
     marker.addTo(this.map);
   }
-
 
   public getMyIpAndSearch(): Observable<IPData> {
     return this.http.get<{ ip: string }>(this.GET_IP_URL).pipe(
