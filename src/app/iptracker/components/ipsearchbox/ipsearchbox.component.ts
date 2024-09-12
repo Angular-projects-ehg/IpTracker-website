@@ -33,7 +33,7 @@ export class IpsearchboxComponent {
       timezone: '',
       lng: 0,
       lat: 0,
-      city:''
+      city: '',
     },
     domains: [],
     as: {
@@ -48,14 +48,14 @@ export class IpsearchboxComponent {
 
   constructor(private ipservice: TrackIpService) {}
 
-  // ngOnInit(): void {
-  //   this.ipservice.getMyIpAndSearch().subscribe((data: IPData) => {
-  //     this.ipdata = data;
-  //     if (this.searchIp) {
-  //       this.searchIp.nativeElement.value = this.ipdata.ip;
-  //     }
-  //   });
-  // }
+  ngOnInit(): void {
+    this.ipservice.getMyIpAndSearch().subscribe((data: IPData) => {
+      this.ipdata = data;
+      if (this.searchIp) {
+        this.searchIp.nativeElement.value = this.ipdata.ip;
+      }
+    });
+  }
 
   FormSubmit(e: Event): void {
     e.preventDefault();
