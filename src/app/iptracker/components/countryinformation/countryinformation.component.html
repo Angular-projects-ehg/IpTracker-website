@@ -4,13 +4,35 @@
       <div class="col-12 md:col-6">
         <mat-list class="w-full">
           <mat-list-item>
-            <p><strong>Country:</strong></p>
+            <p><strong>Country:</strong> {{countrydata?.name?.common}}</p>
           </mat-list-item>
           <mat-divider></mat-divider>
 
-        
-  
-  
+          <mat-list-item>
+            <p><strong>Capital:</strong> {{countrydata?.capital}}</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item>
+            <p><strong>Population:</strong> {{countrydata?.population | number }}</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+
+          <mat-list-item>
+            <p><strong>Region:</strong> {{countrydata?.region }}</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item>
+            <p><strong>Sub Region:</strong> {{countrydata?.subregion }}</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+
+
+
+
         </mat-list>
       </div>
 
