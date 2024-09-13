@@ -28,8 +28,8 @@ The **IP Tracker** is a web application built with **Angular**, **PrimeFlex**, a
 
 Before setting up the project, ensure you have the following installed:
 
-- **Node.js** (>=14.x.x)
-- **Angular CLI** (>=12.x.x)
+- **Node.js** 
+- **Angular CLI**
 
 ### Steps
 
