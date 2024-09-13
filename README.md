@@ -1,27 +1,40 @@
-# IptrackerSite
+# IP Tracker Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
+## Overview
 
-## Development server
+The **IP Tracker** is a web application built with **Angular**, **PrimeFlex**, and **Angular Material**. It enables users to track geolocation and security information for any IP address in real-time. The app is responsive and features a modern UI, designed for a smooth and intuitive user experience across different devices.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **IP Geolocation**: Retrieve the precise location of any IP address, including city, country, and timezone.
+- **Security Insights**: Analyze potential security risks associated with an IP address.
+- **Real-time Tracking**: Instantly track and retrieve data for both personal and external IP addresses.
+- **Responsive Design**: Built with **PrimeFlex** and **Angular Material** to ensure a modern, responsive layout.
+- **Material Design**: Utilizes Angular Material components for consistent, high-quality UI.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Technologies Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular**: Frontend framework used to build scalable single-page applications.
+- **Angular Material**: Component library that implements Google's Material Design for building high-quality UIs.
+- **PrimeFlex**: Utility-first CSS framework for responsive layouts and modern design elements.
+- **TypeScript**: Scalable, strongly-typed language for Angular applications.
+- **HTML5 & CSS3**: For building the structure and styling of the web pages.
+- **API Integration**: Uses the Ipify API to retrieve real-time IP geolocation and security data.
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
 
-## Running end-to-end tests
+Before setting up the project, ensure you have the following installed:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Node.js** (>=14.x.x)
+- **Angular CLI** (>=12.x.x)
 
-## Further help
+### Steps
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Angular-projects-ehg/IpTracker-website.git
+
+2. To run the project use " ng serve -o "
