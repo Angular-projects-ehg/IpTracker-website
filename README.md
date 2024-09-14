@@ -37,4 +37,9 @@ Before setting up the project, ensure you have the following installed:
    ```bash
    git clone https://github.com/Angular-projects-ehg/IpTracker-website.git
 
-2. To run the project use " ng serve -o "
+2. Install node_modules:
+   ```bash
+   npm install
+3. To run the project use:
+```bash
+     ng serve -o 
