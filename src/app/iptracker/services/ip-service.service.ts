@@ -34,7 +34,7 @@ export class TrackIpService {
     isp: '',
   };
 
-  private IP_API_KEY = 'at_hPAACjBFXwBiHiCeOja5JElbVvFTU';
+  private IP_API_KEY = 'at_BrcveaLbj7lSYubmEPCIa33zefqUS';
   private API_URL: string = 'https://geo.ipify.org/api/v2/country,city';
   private GET_IP_URL: string = 'https://api.ipify.org?format=json';
 
